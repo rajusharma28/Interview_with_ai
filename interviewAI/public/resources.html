@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Resources - InterviewAI</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="./resources.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <div class="container">
+        <!-- Navigation -->
+        <nav>
+            <div class="logo">
+                <h1>InterviewAI</h1>
+            </div>
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="practice.html">Practice</a></li>
+                <li><a href="history.html">History</a></li>
+                <li><a href="./resources.html" class="active">Resources</a></li>
+            </ul>
+            <div class="auth-buttons">
+                <button id="loginBtn" class="btn btn-outline">Login</button>
+                <button id="signupBtn" class="btn btn-primary">Sign Up</button>
+            </div>
+            <div class="user-profile hidden">
+                <img src="https://randomuser.me/api/portraits/men/1.jpg" alt="User profile">
+                <span>John Doe</span>
+                <button id="logoutBtn" class="btn btn-small">Logout</button>
+            </div>
+            <div class="menu-toggle">
+                <i class="fas fa-bars"></i>
+            </div>
+        </nav>
+
+        <!-- Resources Section -->
+        <section class="resources-section">
+            <h2>Interview Resources</h2>
+            <div class="resources-grid">
+                <div class="resource-card">
+                    <i class="fas fa-code fa-2x" style="color: var(--primary-color); margin-bottom: 1rem;"></i>
+                    <h3>Technical Interview Guide</h3>
+                    <p>Master the technical aspects of your interview with our comprehensive guide covering essential topics.</p>
+                    <ul>
+                        <li>Data Structures & Algorithms</li>
+                        <li>System Design Principles</li>
+                        <li>Coding Best Practices</li>
+                        <li>Problem Solving Strategies</li>
+                    </ul>
+                    <a href="#" class="btn btn-primary">Access Guide</a>
+                </div>
+                <div class="resource-card">
+                    <i class="fas fa-comments fa-2x" style="color: var(--primary-color); margin-bottom: 1rem;"></i>
+                    <h3>Behavioral Questions</h3>
+                    <p>Prepare for behavioral interviews with proven frameworks and real-world examples.</p>
+                    <ul>
+                        <li>STAR Method Examples</li>
+                        <li>Leadership Scenarios</li>
+                        <li>Conflict Resolution Tips</li>
+                        <li>Team Collaboration Stories</li>
+                    </ul>
+                    <a href="#" class="btn btn-primary">View Questions</a>
+                </div>
+                <div class="resource-card">
+                    <i class="fas fa-lightbulb fa-2x" style="color: var(--primary-color); margin-bottom: 1rem;"></i>
+                    <h3>Interview Tips</h3>
+                    <p>Essential tips and strategies to help you succeed in any interview setting.</p>
+                    <ul>
+                        <li>Body Language & Communication</li>
+                        <li>Time Management Skills</li>
+                        <li>Question Handling Strategies</li>
+                        <li>Follow-up Best Practices</li>
+                    </ul>
+                    <a href="#" class="btn btn-primary">Learn More</a>
+                </div>
+            </div>
+        </section>
+    </div>
+    <script type="module" src="script.js"></script>
+    <script type="module" src="resources.js"></script>
+</body>
+</html> 

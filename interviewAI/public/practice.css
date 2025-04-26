@@ -1,0 +1,128 @@
+/* Styles */
+.practice-section {
+    padding: 4rem 2rem;
+    background: #f8f9fa;
+}
+
+.practice-section h2 {
+    text-align: center;
+    font-size: 2.5rem;
+    margin-bottom: 3rem;
+    color: #2d3436;
+}
+
+.practice-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.practice-card {
+    background: white;
+    border-radius: 15px;
+    padding: 2rem;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    display: flex;
+    flex-direction: column;
+}
+
+.practice-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 15px 40px rgba(0,0,0,0.15);
+}
+
+.card-icon {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    background: #4a90e2;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 1.5rem;
+}
+
+.card-icon i {
+    color: white;
+    font-size: 1.5rem;
+}
+
+.practice-card h3 {
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+    color: #2d3436;
+}
+
+.practice-card p {
+    color: #636e72;
+    line-height: 1.6;
+    margin-bottom: 1.5rem;
+}
+
+.practice-card ul {
+    list-style: none;
+    padding-left: 0;
+    margin-bottom: 2rem;
+    flex-grow: 1;
+}
+
+.practice-card ul li {
+    padding: 0.5rem 0;
+    color: #636e72;
+    position: relative;
+    padding-left: 1.5rem;
+}
+
+.practice-card ul li::before {
+    content: "•";
+    color: #4a90e2;
+    position: absolute;
+    left: 0;
+    font-size: 1.2em;
+}
+
+.start-practice {
+    width: 100%;
+    padding: 1rem;
+    font-size: 1.1rem;
+    margin-top: auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    transition: all 0.3s ease;
+}
+
+.start-practice:hover {
+    background: #357abd;
+    transform: translateY(-2px);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .practice-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .practice-card {
+        padding: 1.5rem;
+    }
+    
+    .practice-section h2 {
+        font-size: 2rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .practice-section {
+        padding: 3rem 1rem;
+    }
+    
+    .card-icon {
+        width: 50px;
+        height: 50px;
+    }
+}

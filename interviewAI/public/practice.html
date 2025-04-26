@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Practice - InterviewAI</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="./practice.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <div class="container">
+        <!-- Navigation -->
+        <nav>
+            <div class="logo">
+                <h1>InterviewAI</h1>
+            </div>
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="practice.html" class="active">Practice</a></li>
+                <li><a href="history.html">History</a></li>
+                <li><a href="resources.html">Resources</a></li>
+            </ul>
+            <div class="auth-buttons">
+                <button id="loginBtn" class="btn btn-outline">Login</button>
+                <button id="signupBtn" class="btn btn-primary">Sign Up</button>
+            </div>
+            <div class="user-profile hidden">
+                <img src="https://randomuser.me/api/portraits/men/1.jpg" alt="User profile">
+                <span>John Doe</span>
+                <button id="logoutBtn" class="btn btn-small">Logout</button>
+            </div>
+            <div class="menu-toggle">
+                <i class="fas fa-bars"></i>
+            </div>
+        </nav>
+
+        <!-- Practice Section -->
+        <section class="practice-section">
+            <h2>Practice Interviews</h2>
+            <div class="practice-grid">
+                <div class="practice-card">
+                    <div class="card-icon">
+                        <i class="fas fa-code"></i>
+                    </div>
+                    <h3>Technical Interview</h3>
+                    <p>Practice coding and technical problem-solving questions</p>
+                    <ul>
+                        <li>Data Structures & Algorithms</li>
+                        <li>Code Implementation</li>
+                        <li>Problem Solving</li>
+                        <li>Time Complexity Analysis</li>
+                    </ul>
+                    <button class="btn btn-primary start-practice" data-type="technical">
+                        <i class="fas fa-play"></i> Start Practice
+                    </button>
+                </div>
+
+                <div class="practice-card">
+                    <div class="card-icon">
+                        <i class="fas fa-comments"></i>
+                    </div>
+                    <h3>Behavioral Interview</h3>
+                    <p>Practice common behavioral and situational questions</p>
+                    <ul>
+                        <li>STAR Method Responses</li>
+                        <li>Leadership Examples</li>
+                        <li>Team Collaboration</li>
+                        <li>Problem Resolution</li>
+                    </ul>
+                    <button class="btn btn-primary start-practice" data-type="behavioral">
+                        <i class="fas fa-play"></i> Start Practice
+                    </button>
+                </div>
+
+                <div class="practice-card">
+                    <div class="card-icon">
+                        <i class="fas fa-diagram-project"></i>
+                    </div>
+                    <h3>System Design</h3>
+                    <p>Practice system design and architecture questions</p>
+                    <ul>
+                        <li>Architecture Planning</li>
+                        <li>Scalability Design</li>
+                        <li>Database Design</li>
+                        <li>API Development</li>
+                    </ul>
+                    <button class="btn btn-primary start-practice" data-type="system">
+                        <i class="fas fa-play"></i> Start Practice
+                    </button>
+                </div>
+            </div>
+        </section>
+    </div>
+    <script src="script.js"></script>
+    <script src="practice.js"></script>
+</body>
+</html> 

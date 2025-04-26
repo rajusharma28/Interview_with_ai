@@ -1,0 +1,345 @@
+    <!DOCTYPE html>
+    <html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>AI Mock Interview Platform</title>
+        <link rel="stylesheet" href="styles.css">
+        <link rel="stylesheet" href="./resources.css">
+        <link rel="stylesheet" href="./practice.css">
+
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    </head>
+    <body>
+        <div class="container">
+            <!-- Navigation -->
+            <nav>
+                <div class="logo">
+                    <h1>InterviewAI</h1>
+                </div>
+                <ul class="nav-links">
+                    <li><a href="#" class="active">Home</a></li>
+                    <li><a href="practice.html">Practice</a></li>
+                    <li><a href="history.html">History</a></li>
+                    <li><a href="resources.css">Resources</a></li>
+                </ul>
+                <div class="auth-buttons">
+                    <button id="loginBtn" class="btn btn-outline">Login</button>
+                    <button id="signupBtn" class="btn btn-primary">Sign Up</button>
+                </div>
+                <div class="user-profile hidden">
+                    <img src="https://randomuser.me/api/portraits/men/1.jpg" alt="User profile">
+                    <span>John Doe</span>
+                    <button id="logoutBtn" class="btn btn-small">Logout</button>
+                </div>
+                <div class="menu-toggle">
+                    <i class="fas fa-bars"></i>
+                </div>
+            </nav>
+
+            <!-- Hero Section -->
+            <section class="hero">
+                <div class="hero-content">
+                    <h1>Master Your Interview Skills with AI</h1>
+                    <p>Practice with our AI interviewer and get instant feedback to improve your chances of landing your dream job.</p>
+                    <button id="startInterviewBtn" class="btn btn-primary btn-large">Start Practice Interview</button>
+                </div>
+                <div class="hero-image">
+                    <img src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="Interview illustration">
+                </div>
+            </section>
+
+            <!-- Features Section -->
+            <section class="features">
+                <h2>Why Choose InterviewAI?</h2>
+                <div class="feature-cards">
+                    <div class="feature-card">
+                        <i class="fas fa-robot"></i>
+                        <h3>AI-Powered Questions</h3>
+                        <p>Our AI generates relevant questions based on the job role you're applying for.</p>
+                    </div>
+                    <div class="feature-card">
+                        <i class="fas fa-comments"></i>
+                        <h3>Real-time Feedback</h3>
+                        <p>Get instant feedback on your answers to improve your interview skills.</p>
+                    </div>
+                    <div class="feature-card">
+                        <i class="fas fa-chart-line"></i>
+                        <h3>Track Progress</h3>
+                        <p>Monitor your improvement over time with detailed performance analytics.</p>
+                    </div>
+                    <div class="feature-card">
+                        <i class="fas fa-industry"></i>
+                        <h3>Industry Specific</h3>
+                        <p>Practice with questions tailored to your industry and experience level.</p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Interview Categories -->
+            <section class="categories">
+                <h2>Interview Categories</h2>
+                <div class="category-cards">
+                    <div class="category-card" data-category="tech">
+                        <i class="fas fa-laptop-code"></i>
+                        <h3>Technical</h3>
+                        <p>Software Engineering, Data Science, IT</p>
+                    </div>
+                    <div class="category-card" data-category="business">
+                        <i class="fas fa-briefcase"></i>
+                        <h3>Business</h3>
+                        <p>Marketing, Sales, Finance, Management</p>
+                    </div>
+                    <div class="category-card" data-category="healthcare">
+                        <i class="fas fa-heartbeat"></i>
+                        <h3>Healthcare</h3>
+                        <p>Nursing, Medical, Pharmacy</p>
+                    </div>
+                    <div class="category-card" data-category="general">
+                        <i class="fas fa-user-tie"></i>
+                        <h3>General</h3>
+                        <p>Behavioral, Common Questions</p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Interview Modal -->
+            <div id="interviewModal" class="modal hidden">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h2>Mock Interview Session</h2>
+                        <span class="close-modal">&times;</span>
+                    </div>
+                    <div class="modal-body">
+                        <div class="interview-setup" id="interviewSetup">
+                            <h3>Configure Your Interview</h3>
+                            <form id="interviewConfigForm">
+                                <div class="form-group">
+                                    <label for="jobTitle">Job Title</label>
+                                    <input type="text" id="jobTitle" placeholder="e.g., Software Engineer">
+                                </div>
+                                <div class="form-group">
+                                    <label for="experienceLevel">Experience Level</label>
+                                    <select id="experienceLevel">
+                                        <option value="entry">Entry Level (0-2 years)</option>
+                                        <option value="mid">Mid Level (3-5 years)</option>
+                                        <option value="senior">Senior Level (6+ years)</option>
+                                    </select>
+                                </div>
+                                <div class="form-group">
+                                    <label for="interviewType">Interview Type</label>
+                                    <select id="interviewType">
+                                        <option value="technical">Technical</option>
+                                        <option value="behavioral">Behavioral</option>
+                                        <option value="mixed">Mixed</option>
+                                    </select>
+                                </div>
+                                <div class="form-group">
+                                    <label for="duration">Duration</label>
+                                    <select id="duration">
+                                        <option value="short">Short (15 min, 5 questions)</option>
+                                        <option value="medium">Medium (30 min, 10 questions)</option>
+                                        <option value="long">Long (45 min, 15 questions)</option>
+                                    </select>
+                                </div>
+                                <button type="submit" class="btn btn-primary">Start Interview</button>
+                            </form>
+                        </div>
+                        
+                        <div class="interview-session hidden" id="interviewSession">
+                            <div class="interview-progress">
+                                <div class="progress-bar">
+                                    <div class="progress-fill" style="width: 0%"></div>
+                                </div>
+                                <div class="question-counter">Question <span id="currentQuestion">1</span> of <span id="totalQuestions">10</span></div>
+                            </div>
+                            
+                            <div class="interview-question">
+                                <h3 id="questionText">Tell me about a time when you had to solve a complex problem.</h3>
+                                <div class="timer">
+                                    <i class="fas fa-clock"></i>
+                                    <span id="timerDisplay">02:00</span>
+                                </div>
+                            </div>
+                            
+                            <div class="answer-section">
+                                <textarea id="answerInput" placeholder="Type your answer here..."></textarea>
+                                <div class="answer-actions">
+                                    <button id="skipBtn" class="btn btn-outline">Skip</button>
+                                    <button id="submitAnswerBtn" class="btn btn-primary">Submit Answer</button>
+                                </div>
+                            </div>
+                            
+                            <div class="feedback-section hidden" id="feedbackSection">
+                                <h3>AI Feedback</h3>
+                                <div class="feedback-content" id="feedbackContent">
+                                    <!-- Feedback will be inserted here -->
+                                </div>
+                                <div class="feedback-actions">
+                                    <button id="nextQuestionBtn" class="btn btn-primary">Next Question</button>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="interview-results hidden" id="interviewResults">
+                            <h3>Interview Results</h3>
+                            <div class="results-summary">
+                                <div class="score-card">
+                                    <div class="score-circle">
+                                        <span id="overallScore">85</span><span>%</span>
+                                    </div>
+                                    <p>Overall Score</p>
+                                </div>
+                                <div class="score-breakdown">
+                                    <div class="score-item">
+                                        <span>Content Quality:</span>
+                                        <div class="score-bar">
+                                            <div class="score-fill" style="width: 80%"></div>
+                                        </div>
+                                        <span>80%</span>
+                                    </div>
+                                    <div class="score-item">
+                                        <span>Relevance:</span>
+                                        <div class="score-bar">
+                                            <div class="score-fill" style="width: 90%"></div>
+                                        </div>
+                                        <span>90%</span>
+                                    </div>
+                                    <div class="score-item">
+                                        <span>Structure:</span>
+                                        <div class="score-bar">
+                                            <div class="score-fill" style="width: 85%"></div>
+                                        </div>
+                                        <span>85%</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="results-details">
+                                <h4>Detailed Feedback</h4>
+                                <div id="detailedFeedback">
+                                    <!-- Detailed feedback will be inserted here -->
+                                </div>
+                            </div>
+                            <div class="results-actions">
+                                <button id="saveResultsBtn" class="btn btn-outline">Save Results</button>
+                                <button id="newInterviewBtn" class="btn btn-primary">New Interview</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Login Modal -->
+            <div id="loginModal" class="modal hidden">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h2>Login</h2>
+                        <span class="close-modal">&times;</span>
+                    </div>
+                    <div class="modal-body">
+                        <form id="loginForm">
+                            <div class="form-group">
+                                <label for="loginEmail">Email</label>
+                                <input type="email" id="loginEmail" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="loginPassword">Password</label>
+                                <input type="password" id="loginPassword" required>
+                            </div>
+                            <div class="form-actions">
+                                <button type="submit" class="btn btn-primary">Login</button>
+                            </div>
+                            <div class="form-footer">
+                                <p>Don't have an account? <a href="#" id="showSignupBtn">Sign up</a></p>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Signup Modal -->
+            <div id="signupModal" class="modal hidden">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h2>Create Account</h2>
+                        <span class="close-modal">&times;</span>
+                    </div>
+                    <div class="modal-body">
+                        <form id="signupForm">
+                            <div class="form-group">
+                                <label for="signupName">Full Name</label>
+                                <input type="text" id="signupName" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="signupEmail">Email</label>
+                                <input type="email" id="signupEmail" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="signupPassword">Password</label>
+                                <input type="password" id="signupPassword" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="signupConfirmPassword">Confirm Password</label>
+                                <input type="password" id="signupConfirmPassword" required>
+                            </div>
+                            <div class="form-actions">
+                                <button type="submit" class="btn btn-primary">Create Account</button>
+                            </div>
+                            <div class="form-footer">
+                                <p>Already have an account? <a href="#" id="showLoginBtn">Login</a></p>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Footer -->
+            <footer>
+                <div class="footer-content">
+                    <div class="footer-logo">
+                        <h2>InterviewAI</h2>
+                        <p>Master your interview skills with AI</p>
+                    </div>
+                    <div class="footer-links">
+                        <div class="footer-column">
+                            <h3>Company</h3>
+                            <ul>
+                                <li><a href="#">About Us</a></li>
+                                <li><a href="#">Careers</a></li>
+                                <li><a href="#">Contact</a></li>
+                            </ul>
+                        </div>
+                        <div class="footer-column">
+                            <h3>Resources</h3>
+                            <ul>
+                                <li><a href="#">Blog</a></li>
+                                <li><a href="#">Interview Tips</a></li>
+                                <li><a href="#">FAQ</a></li>
+                            </ul>
+                        </div>
+                        <div class="footer-column">
+                            <h3>Legal</h3>
+                            <ul>
+                                <li><a href="#">Privacy Policy</a></li>
+                                <li><a href="#">Terms of Service</a></li>
+                                <li><a href="#">Cookie Policy</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="footer-bottom">
+                    <p>&copy; 2025 InterviewAI. All rights reserved.</p>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-facebook"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-linkedin"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                    </div>
+                </div>
+            </footer>
+        </div>
+
+        <script  type="module" src="script.js"></script>
+        <!-- <script src="database.js"></script> -->
+    </body>
+    </html>

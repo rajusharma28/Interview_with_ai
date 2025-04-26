@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>History - InterviewAI</title>
+    <link rel="stylesheet" href="styles.css" />
+    <link rel="stylesheet" href="./history.css">
+    <link rel="stylesheet" href="./resources.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+</head>
+<body>
+    <div class="container">
+        <!-- Navigation -->
+        <nav>
+            <div class="logo">
+                <h1>InterviewAI</h1>
+            </div>
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="practice.html">Practice</a></li>
+                <li><a href="history.html" class="active">History</a></li>
+                <li><a href="resources.html">Resources</a></li>
+            </ul>
+            <div class="auth-buttons">
+                <button id="loginBtn" class="btn btn-outline">Login</button>
+                <button id="signupBtn" class="btn btn-primary">Sign Up</button>
+            </div>
+            <div class="user-profile hidden">
+                <img src="https://randomuser.me/api/portraits/men/1.jpg" alt="User profile" />
+                <span id="user-display">John Doe</span>
+                <button id="logoutBtn" class="btn btn-small">Logout</button>
+            </div>
+            <div class="menu-toggle">
+                <i class="fas fa-bars"></i>
+            </div>
+        </nav>
+
+        <!-- History Section -->
+        <section class="history-section">
+            <h2>Interview History</h2>
+
+            <!-- Statistics Section -->
+            <div id="stats-container" class="mb-4">
+                <!-- Will be populated by JavaScript -->
+            </div>
+
+            <!-- Progress Chart -->
+            <div class="card mb-4">
+                <div class="card-body">
+                    <h5 class="card-title">Recent Progress</h5>
+                    <canvas id="progress-chart" height="200"></canvas>
+                </div>
+            </div>
+
+            <!-- Filters -->
+            <div class="card mb-4">
+                <div class="card-body">
+                    <h5 class="card-title">Filter Interviews</h5>
+                    <form id="filter-form" class="row g-3">
+                        <div class="col-md-5">
+                            <label for="type-filter" class="form-label">Interview Type</label>
+                            <select id="type-filter" class="form-select">
+                                <option value="">All Types</option>
+                                <option value="technical">Technical</option>
+                                <option value="behavioral">Behavioral</option>
+                                <option value="business">Business</option>
+                                <option value="healthcare">Healthcare</option>
+                            </select>
+                        </div>
+                        <div class="col-md-5">
+                            <label for="date-filter" class="form-label">Date</label>
+                            <input type="date" id="date-filter" class="form-control">
+                        </div>
+                        <div class="col-md-2 d-flex align-items-end">
+                            <button type="submit" class="btn btn-primary">Apply Filters</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+
+            <!-- History List -->
+            <div id="history-container">
+                <!-- Will be populated by JavaScript -->
+            </div>
+        </section>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <!-- <script type="module" src="database.js"></script> -->
+    <script type="module" src="history.js"></script>
+</body>
+</html>
